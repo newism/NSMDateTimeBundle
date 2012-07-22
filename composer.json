@@ -19,5 +19,11 @@
     "autoload": {
         "psr-0": { "NSM\\Bundle\\NSMDateTimeBundle": "" }
     },
-    "target-dir": "NSM/Bundle/NSMDateTimeBundle"
+    "target-dir": "NSM/Bundle/NSMDateTimeBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "*"
+        }
+    }
+    
 }
