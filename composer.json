@@ -1,0 +1,24 @@
+{
+    "name": "newism/nsm-date-time-bundle",
+    "description": "Date / Time utility for Symfony2",
+    "keywords": ["emoji", "twig"],
+    "homepage": "https://github.com/newism/NSMDateTimeBundle",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Newism Pty Ltd",
+            "homepage": "http://newism.com.au"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://github.com/newism/NSMDateTimeBundle/contributors"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "2.*",
+    },
+    "autoload": {
+        "psr-0": { "NSM\\Bundle\\NSMDateTimeBundle": "" }
+    },
+    "target-dir": "NSM/Bundle/NSMDateTimeBundle"
+}
