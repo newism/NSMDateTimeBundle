@@ -1,10 +1,10 @@
 <?php
 
-namespace NSM\Bundle\NSMDateTimeBundle\Utility;
+namespace NSM\Bundle\DateTimeBundle\Utility;
 
 use DateTime;
 
-class DateTime
+class DateTimeHelper
 {
     public $current_date = null;
 
