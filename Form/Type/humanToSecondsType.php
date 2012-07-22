@@ -1,8 +1,8 @@
 <?php
 
-namespace NSM\Bundle\DateTimeBundle\Form\Type;
+namespace NSM\Bundle\NSMDateTimeBundle\Form\Type;
 
-use NSM\Bundle\DateTimeBundle\Form\DataTransformer\HumanToSecondsTransformer;
+use NSM\Bundle\NSMDateTimeBundle\Form\DataTransformer\HumanToSecondsTransformer;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
