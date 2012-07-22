@@ -1,5 +1,5 @@
 {
-    "name": "newism/nsm-date-time-bundle",
+    "name": "newism/nsm-datetime-bundle",
     "description": "Date / Time utility for Symfony2",
     "keywords": ["emoji", "twig"],
     "homepage": "https://github.com/newism/NSMDateTimeBundle",
