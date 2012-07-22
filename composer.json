@@ -17,9 +17,9 @@
         "symfony/framework-bundle": "2.*"
     },
     "autoload": {
-        "psr-0": { "NSM\\Bundle\\NSMDateTimeBundle": "" }
+        "psr-0": { "NSM\\Bundle\\DateTimeBundle": "" }
     },
-    "target-dir": "NSM/Bundle/NSMDateTimeBundle",
+    "target-dir": "NSM/Bundle/DateTimeBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "*"
