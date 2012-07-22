@@ -1,7 +1,6 @@
 {
     "name": "newism/nsm-date-time-bundle",
     "description": "Date / Time bundle for Symfony2. Includes date utility and form field",
-    "keywords": ["emoji", "twig"],
     "homepage": "https://github.com/newism/NSMDateTimeBundle",
     "type": "symfony-bundle",
     "authors": [
