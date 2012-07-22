@@ -1,6 +1,6 @@
 <?php
 
-namespace NSM\Bundle\NSMDateTimeBundle;
+namespace NSM\Bundle\DateTimeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
