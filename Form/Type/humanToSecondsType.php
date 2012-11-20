@@ -2,12 +2,10 @@
 
 namespace NSM\Bundle\DateTimeBundle\Form\Type;
 
-use NSM\Bundle\NSMDateTimeBundle\Form\DataTransformer\HumanToSecondsTransformer;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormView;
-use Symfony\Component\Form\FormInterface;
+
+use NSM\Bundle\DateTimeBundle\Form\DataTransformer\HumanToSecondsTransformer;
 
 class HumanToSecondsType extends AbstractType
 {

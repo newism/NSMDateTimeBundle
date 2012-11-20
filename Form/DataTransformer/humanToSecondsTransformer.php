@@ -1,6 +1,6 @@
 <?php
 
-namespace NSM\Bundle\NSMDateTimeBundle\Form\DataTransformer;
+namespace NSM\Bundle\DateTimeBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
