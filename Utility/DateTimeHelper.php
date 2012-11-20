@@ -9,8 +9,10 @@ class DateTimeHelper
     public $current_date = null;
 
     /**
-     * @param DateTime $current
-     * @return DateTime $end
+     * Get the end of the day
+     *
+     * @param \DateTime $current
+     * @return \DateTime
      */
     public function getEndOfDay(DateTime $current)
     {
@@ -24,13 +26,15 @@ class DateTimeHelper
     }
 
     /**
+     * Get the end of the week
+     *
      * If end of week is saturday, then offset is "Saturday"
      * If end of week is sunday, then offset is "Sunday"
      * If end of week is friday, then offset is "Friday"
      *
-     * @param DateTime $current
+     * @param \DateTime $current
      * @param string $endDay
-     * @return DateTime $start
+     * @return \DateTime
      */
     public function getEndOfWeek(DateTime $current, $endDay = "Saturday")
     {
@@ -48,8 +52,10 @@ class DateTimeHelper
     }
 
     /**
-     * @param DateTime $current
-     * @return DateTime $end
+     * Get the end of the month
+     *
+     * @param \DateTime $current
+     * @return \DateTime
      */
     public function getEndOfMonth(DateTime $current)
     {
@@ -59,8 +65,10 @@ class DateTimeHelper
     }
 
     /**
-     * @param DateTime $current
-     * @return DateTime $next
+     * Get the start of the next month
+     *
+     * @param \DateTime $current
+     * @return \DateTime
      */
     public function getNextMonth(DateTime $current)
     {
@@ -73,8 +81,10 @@ class DateTimeHelper
     }
 
     /**
-     * @param DateTime $current
-     * @return DateTime $start
+     * Get the start of the day
+     *
+     * @param \DateTime $current
+     * @return \DateTime
      */
     public function getStartOfDay(DateTime $current)
     {
@@ -88,8 +98,10 @@ class DateTimeHelper
     }
 
     /**
-     * @param DateTime $current
-     * @return DateTime $start
+     * Get the start of the month
+     *
+     * @param \DateTime $current
+     * @return \DateTime
      */
     public function getStartOfMonth(DateTime $current)
     {
@@ -102,13 +114,15 @@ class DateTimeHelper
     }
 
     /**
+     * Get the start of the week
+     *
      * If start of week is sunday, then offset is "Sunday"
      * If start of week is monday, then offset is "Monday"
      * If start of week is saturday, then offset is "Saturday"
      *
-     * @param DateTime $current
+     * @param \DateTime $current
      * @param string $startDay
-     * @return DateTime $start
+     * @return \DateTime
      */
     public function getStartOfWeek(DateTime $current, $startDay = "Sunday")
     {
@@ -127,31 +141,55 @@ class DateTimeHelper
 
     /**
      * Check if a Datetime object is within two other DateTime objects
-     * @param  DateTime $date  [description]
-     * @param  DateTime $start [description]
-     * @param  DateTime $end   [description]
-     * @return boolean
+     *
+     * @param \DateTime $date
+     * @param \DateTime $start
+     * @param \DateTime $end
+     * @return bool
      */
     public function isWithinDates(DateTime $date, DateTime $start, DateTime $end)
     {
         return ($date >= $start && $date <= $end);
     }
 
+    /**
+     * Is the date today?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
     public function isToday(DateTime $date) 
     {
         return $this->isDay($date);
     }
 
-    public function isTomorrow(DateTime $date) 
+    /**
+     * Is the date tomorrow?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isTomorrow(DateTime $date)
     {
         return $this->isDay($date,'+1');
     }
 
-    public function isYesterday(DateTime $date) 
+    /**
+     * Is the date yesterday?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isYesterday(DateTime $date)
     {
         return $this->isDay($date,'-1');
     }
 
+    /**
+     * @param \DateTime $date
+     * @param bool $n
+     * @return bool
+     */
     public function isDay(DateTime $date, $n = false)
     {
         $now = new DateTime($this->current_date);
@@ -161,7 +199,45 @@ class DateTimeHelper
         return $this->isWithinDates($date,$start,$end);
     }
 
-    public function isWeek(DateTime $date, $n = false) 
+    /**
+     * Is the date this week?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isThisWeek(DateTime $date)
+    {
+        return $this->isWeek($date);
+    }
+
+    /**
+     * Is the date next week?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isNextWeek(DateTime $date)
+    {
+        return $this->isWeek($date,'+1');
+    }
+
+    /**
+     * Is the date last week?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isLastWeek(DateTime $date)
+    {
+        return $this->isWeek($date,'-1');
+    }
+
+    /**
+     * @param \DateTime $date
+     * @param bool $n
+     * @return bool
+     */
+    public function isWeek(DateTime $date, $n = false)
     {
         $now = new DateTime($this->current_date);
         if($n) {
@@ -172,42 +248,50 @@ class DateTimeHelper
         return $this->isWithinDates($date,$start,$end);
     }
 
-    public function isThisWeek(DateTime $date)
+    /**
+     * Is the date this month?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isThisMonth(DateTime $date)
     {
-        return $this->isWeek($date);
+        return $this->isMonth($date);
     }
 
-    public function isNextWeek(DateTime $date)
+    /**
+     * Is the date last month?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isLastMonth(DateTime $date)
     {
-        return $this->isWeek($date,'+1');
+        return $this->isMonth($date,'-1');
     }
 
-    public function isLastWeek(DateTime $date)
+    /**
+     * Is the date next month?
+     *
+     * @param \DateTime $date
+     * @return bool
+     */
+    public function isNextMonth(DateTime $date)
     {
-        return $this->isWeek($date,'-1');
+        return $this->isMonth($date,'+1');
     }
 
-    public function isMonth(DateTime $date, $n = false) 
+    /**
+     * @param \DateTime $date
+     * @param bool $n
+     * @return bool
+     */
+    public function isMonth(DateTime $date, $n = false)
     {
         $now = new DateTime($this->current_date);
         if($n) $now->modify($n.' months');
         $start = $this->getStartOfMonth($now);
         $end = $this->getEndOfMonth($now);
         return $this->isWithinDates($date,$start,$end);
-    }
-
-    public function isThisMonth(DateTime $date)
-    {
-        return $this->isMonth($date);
-    }
-
-    public function isLastMonth(DateTime $date)
-    {
-        return $this->isMonth($date,'-1');
-    }
-
-    public function isNextMonth(DateTime $date)
-    {
-        return $this->isMonth($date,'+1');
     }
 }
